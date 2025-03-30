@@ -1,0 +1,63 @@
+/* styles.css */
+
+.main-container {
+    -fx-background-color: #f5f5f5;
+}
+
+.sidebar-button {
+    -fx-background-radius: 5;
+    -fx-padding: 10 15;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #5e42d4;
+}
+
+.profile-button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+}
+
+.profile-button:hover {
+    -fx-background-color: #0d8bf2;
+}
+
+.camera-box {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-padding: 4;
+}
+
+.icon-button:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 15;
+}
+
+/* Table styles */
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 10;
+}
+
+.table-view .table-cell {
+    -fx-padding: 10;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+
+.table-row-cell:even {
+    -fx-background-color: white;
+}

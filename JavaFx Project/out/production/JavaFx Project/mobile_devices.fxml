@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Mobile_Devices_Controller">
+
+    <children>
+        <Label layoutX="20" layoutY="20" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="MOBILE DEVICES" />
+
+
+        <VBox layoutX="20" layoutY="50" spacing ="50">
+            <VBox fx:id="card1" prefWidth="0" prefHeight="50" styleClass="metric-card-blue">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+
+                <Label fx:id="mobiledevicescount" text="0" styleClass="metric-number"/>
+                <Label text="Mobile Devices" styleClass="metric-label"/>
+            </VBox>
+
+            <Pane layoutX="20" layoutY="100" prefHeight="150" prefWidth="200" style="-fx-border-color: #ff5722; -fx-border-width: 3px; -fx-border-radius: 5px;">
+                <Label layoutX="10" layoutY="10" style="-fx-font-weight: bold;" text="Camera Preview" />
+                <ImageView fx:id="cameraFeed" fitWidth="300" fitHeight="200"/>
+            </Pane>
+        </VBox>
+    </children>
+</AnchorPane>

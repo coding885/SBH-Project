@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller"
+            stylesheets="@style.css"
+            prefWidth="1000" prefHeight="600"
+            fx:id="mainPane">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox spacing="5" prefWidth="200" styleClass="sidebar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="SmartShield" styleClass="logo-text">
+                <font>
+                    <Font name="Arial Bold" size="18"/>
+                </font>
+                <padding>
+                    <Insets top="10" right="10" bottom="20" left="10"/>
+                </padding>
+            </Label>
+
+            <Button text="Dashboard" styleClass="sidebar-button" prefWidth="180" >
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+            <Button text="Mobile Devices" styleClass="sidebar-button" prefWidth="180" onAction="#handleMobileDevicesClick">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+            <Button text="Wifi Devices" styleClass="sidebar-button" prefWidth="180">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+            <Button text="BLE Devices" styleClass="sidebar-button" prefWidth="180">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+            <Button text="Analysis" styleClass="sidebar-button" prefWidth="180">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+            <Button text="Zones" styleClass="sidebar-button" prefWidth="180">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+            <Button text="Reports" styleClass="sidebar-button" prefWidth="180">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+            <Button text="Alerts Generated" styleClass="sidebar-button" prefWidth="180">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </Button>
+
+
+
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="10" right="0" bottom="10" left="0"/>
+                </padding>
+
+                <Label text="DASHBOARD">
+                    <font>
+                        <Font name="Arial Bold" size="16"/>
+                    </font>
+                </Label>
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <TextField promptText="Search..." prefWidth="200" />
+
+                <Button text="Profile" styleClass="profile-button" />
+            </HBox>
+
+            <!-- Metric Cards -->
+            <HBox spacing="15">
+                <padding>
+                    <Insets top="10" right="0" bottom="20" left="0"/>
+                </padding>
+
+                <VBox fx:id="card1" prefWidth="225" prefHeight="100" styleClass="metric-card-blue">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <Label fx:id="mobiledevicescount" text="0" styleClass="metric-number"/>
+                    <Label text="Mobile Devices" styleClass="metric-label"/>
+                </VBox>
+
+                <VBox fx:id="card2" prefWidth="225" prefHeight="100" styleClass="metric-card-red">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <Label fx:id="wificountlabel" text="0" styleClass="metric-number"/>
+                    <Label text="Wifi Devices" styleClass="metric-label"/>
+                </VBox>
+
+                <VBox fx:id="card3" prefWidth="225" prefHeight="100" styleClass="metric-card-purple">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <Label fx:id="blecountlabel" text="0" styleClass="metric-number"/>
+                    <Label text="BLE Devices" styleClass="metric-label"/>
+                </VBox>
+
+                <VBox fx:id="card4" prefWidth="225" prefHeight="100" styleClass="metric-card-cyan">
+                    <padding>
+                        <Insets top="15" right="15" bottom="15" left="15"/>
+                    </padding>
+
+                    <Label text="1" styleClass="metric-number"/>
+                    <Label text="Alerts" styleClass="metric-label"/>
+                </VBox>
+            </HBox>
+
+            <!-- Table View -->
+            <TableView fx:id="tableView" VBox.vgrow="ALWAYS" styleClass="dashboard-table">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                    <TableColumn fx:id="macColumn" text="macAddress" prefWidth="100"/>
+                    <TableColumn fx:id="signalColumn" text="Signal Strength" prefWidth="100"/>
+                    <TableColumn fx:id="typeColumn" text="Type Of Device" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <!-- Pagination -->
+            <HBox alignment="CENTER" spacing="5">
+                <padding>
+                    <Insets top="10" right="0" bottom="10" left="0"/>
+                </padding>
+
+                <Button text="&lt;"/>
+                <Button text="1" styleClass="pagination-button-active"/>
+                <Button text="2"/>
+                <Button text="3"/>
+                <Button text="4"/>
+                <Button text="5"/>
+                <Button text="&gt;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
