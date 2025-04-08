@@ -95,8 +95,8 @@ public class Controller implements Initializable
                     Mat frame = new Mat();
                     while (isCameraOpen) {
                         if (camera.read(frame)) {
-                            // Here you would convert the Mat to JavaFX image and show it
-                            // This is just a placeholder - you'll need to implement the conversion
+                            // Here convert the Mat to JavaFX image and show it
+                            // This is just a placeholder -  need to implement the conversion
                             // Platform.runLater(() -> updateCameraPreview(frame));
                         }
                         try {
