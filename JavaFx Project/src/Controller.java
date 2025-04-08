@@ -79,8 +79,10 @@ public class Controller implements Initializable
     }
 
     @FXML
-    private void toggleCamera() {
-        if (!isCameraOpen) {
+    private void toggleCamera() 
+    {
+        if (!isCameraOpen) 
+        {
             // Open camera
             System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
             camera = new VideoCapture();
@@ -91,15 +93,19 @@ public class Controller implements Initializable
                 openCameraButton.setText("Close Camera");
 
                 // Start camera feed in new thread
-                new Thread(() -> {
+                new Thread(() -> 
+                {
                     Mat frame = new Mat();
-                    while (isCameraOpen) {
-                        if (camera.read(frame)) {
+                    while (isCameraOpen) 
+                    {
+                        if (camera.read(frame)) 
+                        {
                             // Here convert the Mat to JavaFX image and show it
                             // This is just a placeholder -  need to implement the conversion
                             // Platform.runLater(() -> updateCameraPreview(frame));
                         }
-                        try {
+                        try 
+                        {
                             Thread.sleep(33); // ~30 fps
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -107,11 +113,13 @@ public class Controller implements Initializable
                     }
                 }).start();
             }
-        } else {
+        } else 
+        {
             // Close camera
             isCameraOpen = false;
             openCameraButton.setText("Open Camera");
-            if (camera != null && camera.isOpened()) {
+            if (camera != null && camera.isOpened()) 
+            {
                 camera.release();
             }
         }
@@ -119,9 +127,12 @@ public class Controller implements Initializable
 
 
     @FXML
-    private void showLiveYOLO() {
-        new Thread(() -> {
-            try {
+    private void showLiveYOLO() 
+    {
+        new Thread(() ->
+        {
+            try 
+            {
                 ProcessBuilder processBuilder = new ProcessBuilder("python", "C:\\Users\\aritr\\IdeaProjects\\Aritra Python Intellij\\detect.py");
                 processBuilder.redirectErrorStream(true);
                 Process process = processBuilder.start();
@@ -221,8 +232,10 @@ public class Controller implements Initializable
     }
 
 
-    private void startYOLO() {
-        new Thread(() -> {
+    private void startYOLO() 
+    {
+        new Thread(() -> 
+        {
             try {
                 OutputStream mobileDevicesOutputStream = Mobile_Devices_Controller.getOutputStream();
 
