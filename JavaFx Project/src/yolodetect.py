@@ -4,8 +4,8 @@ import base64
 import sys
 from ultralytics import YOLO
 
-# Load YOLOv8 model
-model = YOLO("yolo12n.pt")  # Change to your custom YOLOv8 model for mobile detection
+# Load YOLO12n model
+model = YOLO("yolo12n.pt")  # Change to  custom YOLOv8 model for mobile detection
 
 # Open video feed (0 for webcam, or replace with video file path)
 cap = cv2.VideoCapture(0)
