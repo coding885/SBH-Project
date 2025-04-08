@@ -19,7 +19,7 @@ public class Main extends Application
         // Load CSS from the current directory
         scene.getStylesheets().add("style.css");
 
-        primaryStage.setTitle("StreamFlow Dashboard");
+        primaryStage.setTitle("Smartshield Dashboard");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
